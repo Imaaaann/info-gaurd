@@ -213,3 +213,18 @@
             }, 500); // should match CSS transition
           });
         });*/
+          function handleLogin(event) {
+    event.preventDefault(); // prevent default form submission
+
+    // (Optional) Validate fields here if needed
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    // Optionally check if email and password match something
+    // For now, just redirect
+    if (email && password) {
+      window.location.href = "dashboard.html"; // Update path if needed
+    } else {
+      alert("Please fill in both fields.");
+    }
+  }
