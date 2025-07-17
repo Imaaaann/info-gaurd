@@ -25,14 +25,28 @@ document.getElementById('toggleBtn').addEventListener('click', () => {
   toggleBtn.textContent = sidebar.classList.contains('collapsed') ? '☰' : '✕';
 });
 
-// Navigation toggle active
 document.querySelectorAll('.nav-link').forEach(link => {
   link.addEventListener('click', function (e) {
-    e.preventDefault();
-    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-    this.classList.add('active');
+    const href = this.getAttribute('href');
+
+    if (href && href.endsWith('.html')) {
+      // Optional: visual feedback before navigating
+      e.preventDefault();
+
+      document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+      this.classList.add('active');
+
+      // Optional: slide-out animation
+      document.body.classList.remove('slide-in');
+      document.body.classList.add('slide-out');
+
+      setTimeout(() => {
+        window.location.href = href;
+      }, 400); // Adjust time to match animation
+    }
   });
 });
+
 
 // Dashboard simulation
 async function fetchDashboardData() {
@@ -148,3 +162,4 @@ setInterval(() => {
   loadDashboardData();
   loadRecentUploads();
 }, 30000);
+
