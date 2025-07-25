@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="assets/css/dashboard.css" />
+</head>
+<body>
+  <div class="sidebar" id="sidebar">
+    <button class="toggle-btn" id="toggleBtn">☰</button>
+    <div class="logo">
+      <div class="logo-icon"></div>
+      <span class="logo-text">InfoGuard</span>
+    </div>
+    <ul class="nav-menu">
+      <li class="nav-item"><a href="#" class="nav-link active"><span class="nav-icon">📊</span><span class="nav-text">Dashboard</span></a></li>
+      <li class="nav-item"><a href="upload.html" class="nav-link"><span class="nav-icon">📤</span><span class="nav-text">Upload Media</span></a></li>
+      <li class="nav-item"><a href="#" class="nav-link"><span class="nav-icon">🔒</span><span class="nav-text">Access Control</span></a></li>
+      <li class="nav-item"><a href="#" class="nav-link"><span class="nav-icon">🔐</span><span class="nav-text">Biometric Access</span></a></li>
+      <li class="nav-item"><a href="#" class="nav-link"><span class="nav-icon">👤</span><span class="nav-text">Profile Settings</span></a></li>
+    </ul>
+    <div class="settings-link">
+      <a href="#" class="nav-link"><span class="nav-icon">⚙️</span><span class="nav-text">Settings</span></a>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="top-bar">
+      <button class="top-bar-btn">🔍</button>
+      <button class="top-bar-btn">🔔</button>
+      <button class="top-bar-btn profile-btn">K</button>
+    </div>
+
+    <div class="header">
+      <span id="welcomeText">Welcome back, Kwame</span>
+      <button class="theme-toggle" id="themeToggle">🌙</button>
+    </div>
+
+    <div class="dashboard-grid">
+      <div class="card"><div class="card-title">Files Uploaded</div><div class="card-value" id="filesCount"><span class="loading">Loading...</span></div><div class="card-subtitle">files</div></div>
+      <div class="card"><div class="card-title">Storage Used</div><div class="card-value" id="storageUsed"><span class="loading">Loading...</span></div><div class="card-subtitle">GB of <span id="totalStorage">5</span>GB</div></div>
+      <div class="card"><div class="card-title">Trusted Accessors</div><div class="card-value" id="usersCount"><span class="loading">Loading...</span></div><div class="card-subtitle">users</div></div>
+    </div>
+
+    <div class="bottom-section">
+      <div class="recent-uploads">
+        <div class="card-title">Recent Uploads</div>
+        <div class="empty-state" id="recentUploads">Loading recent uploads...</div>
+      </div>
+      <div class="access-control">
+        <div class="card-title">Access Control</div>
+        <div class="add-user-form">
+          <div class="form-group">
+            <label class="form-label">User Email</label>
+            <input type="email" class="form-input" id="userEmail" placeholder="Enter user email" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Access Level</label>
+            <select class="form-select" id="accessLevel">
+              <option value="view">View Only</option>
+              <option value="edit">Edit Access</option>
+              <option value="admin">Full Access</option>
+            </select>
+          </div>
+          <button class="btn btn-primary" id="addUserBtn">Add User</button>
+        </div>
+        <div class="user-list" id="userList"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/dashboard.js"></script>
+</body>
+</html>

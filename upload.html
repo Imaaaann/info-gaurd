@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Upload Media - InfoGuard</title>
+  <link rel="stylesheet" href="assets/css/upload.css" />
+</head>
+<body>
+  <div class="sidebar" id="sidebar">
+    <button class="toggle-btn" id="toggleBtn" aria-label="Toggle sidebar">☰</button>
+    <div class="logo">
+      <div class="logo-icon"></div>
+      <span class="logo-text">InfoGuard</span>
+    </div>
+    <ul class="nav-menu">
+        
+      <li class="nav-item"><a href="#" class="nav-link active" data-page="upload"><span class="nav-icon">📤</span><span class="nav-text">Upload Media</span></a></li>
+      <li class="nav-item"><a href="#" class="nav-link" data-page="access"><span class="nav-icon">🔒</span><span class="nav-text">Access Control</span></a></li>
+      <li class="nav-item"><a href="#" class="nav-link" data-page="biometric"><span class="nav-icon">🔐</span><span class="nav-text">Biometric Access</span></a></li>
+      <li class="nav-item"><a href="#" class="nav-link" data-page="profile"><span class="nav-icon">👤</span><span class="nav-text">Profile Settings</span></a></li>
+    </ul>
+    <div class="settings-link">
+      <a href="#" class="nav-link" data-page="settings"><span class="nav-icon">⚙️</span><span class="nav-text">Settings</span></a>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="top-bar">
+      <button class="top-bar-btn">🔍</button>
+      <button class="top-bar-btn">🔔</button>
+      <button class="top-bar-btn profile-btn">K</button>
+    </div>
+    <div class="header">
+      <span id="welcomeText">Upload Media</span>
+      <button class="theme-toggle" id="themeToggle">🌙</button>
+    </div>
+
+    <div class="upload-container">
+      <h2 class="upload-title">Upload Media</h2>
+      <div class="drop-zone" id="dropZone">
+        <div class="drop-zone-icon">➕</div>
+        <div class="drop-zone-text">Drag and drop files or</div>
+        <div class="drop-zone-subtext">JPG, PNG, PDF, DOCX, and ZIP up to 50MB</div>
+        <button class="browse-btn" id="browseBtn">Browse</button>
+        <input type="file" class="file-input" id="fileInput" multiple accept=".jpg,.jpeg,.png,.pdf,.docx,.doc,.txt,.zip" />
+      </div>
+    </div>
+
+    <div class="files-section">
+      <div class="files-header">
+        <h3 class="files-title">Files</h3>
+        <button class="upload-all-btn" id="uploadAllBtn">Upload</button>
+      </div>
+      <div class="file-list" id="fileList">
+        <div class="empty-state">
+          <div class="empty-state-icon">📁</div>
+          <div>No files selected</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/upload.js"></script>
+</body>
+</html>
