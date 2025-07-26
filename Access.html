@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Access Control - InfoGuard</title>
+  <link rel="stylesheet" href="info.css/Access.css">
+</head>
+<body>
+  <div class="sidebar" id="sidebar">
+    <button class="toggle-btn" id="toggleBtn">☰</button>
+    <div class="logo">
+      <div class="logo-icon"></div>
+      <span class="logo-text">InfoGuard</span>
+    </div>
+    <ul class="nav-menu">
+      <li class="nav-item"><a href="dashboard.html" class="nav-link"><span class="nav-icon">📊</span><span class="nav-text">Dashboard</span></a></li>
+      <li class="nav-item"><a href="upload.html" class="nav-link"><span class="nav-icon">📤</span><span class="nav-text">Upload Media</span></a></li>
+      <li class="nav-item"><a href="#" class="nav-link active"><span class="nav-icon">🔒</span><span class="nav-text">Access Control</span></a></li>
+      <li class="nav-item"><a href="#" class="nav-link"><span class="nav-icon">🔐</span><span class="nav-text">Biometric Access</span></a></li>
+      <li class="nav-item"><a href="#" class="nav-link"><span class="nav-icon">👤</span><span class="nav-text">Profile Settings</span></a></li>
+    </ul>
+    <div class="settings-link">
+      <a href="#" class="nav-link"><span class="nav-icon">⚙️</span><span class="nav-text">Settings</span></a>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="top-bar">
+      <button class="top-bar-btn">🔍</button>
+      <button class="top-bar-btn">🔔</button>
+      <button class="top-bar-btn profile-btn">K</button>
+    </div>
+
+    <div class="header">
+      <span id="welcomeText">Access Control Management</span>
+      <button class="theme-toggle" id="themeToggle">🌙</button>
+    </div>
+
+    <div class="access-stats">
+      <div class="stat-card">
+        <div class="stat-icon">👥</div>
+        <div class="stat-value">14</div>
+        <div class="stat-label">Active Users</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">📊</div>
+        <div class="stat-value">3</div>
+        <div class="stat-label">Admin Users</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">🔑</div>
+        <div class="stat-value">86%</div>
+        <div class="stat-label">Access Compliance</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><i>👤</i> Add New User</div>
+      <div class="add-user-form">
+        <div class="form-group">
+          <label class="form-label">User Name</label>
+          <input type="text" class="form-input" id="userName" placeholder="Enter full name" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">User Email</label>
+          <input type="email" class="form-input" id="userEmail" placeholder="Enter user email" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Access Level</label>
+          <select class="form-select" id="accessLevel">
+            <option value="view">View Only</option>
+            <option value="edit">Edit Access</option>
+            <option value="admin">Full Access (Admin)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Permissions</label>
+          <div class="permissions-grid">
+            <div class="permission-item">
+              <input type="checkbox" id="viewDocs">
+              <label for="viewDocs">View Documents</label>
+            </div>
+            <div class="permission-item">
+              <input type="checkbox" id="downloadFiles">
+              <label for="downloadFiles">Download Files</label>
+            </div>
+            <div class="permission-item">
+              <input type="checkbox" id="editMetadata">
+              <label for="editMetadata">Edit Metadata</label>
+            </div>
+            <div class="permission-item">
+              <input type="checkbox" id="manageUsers">
+              <label for="manageUsers">Manage Users</label>
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-success" id="addUserBtn"><i>➕</i> Add User</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><i>👥</i> User Access List</div>
+      <div class="user-list" id="userList">
+        <!-- Users will be populated by JavaScript -->
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><i>📜</i> Recent Access Activity</div>
+      <div class="access-history" id="accessHistory">
+        <!-- Activity will be populated by JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <script src="info.js/Access.js"></script>
+</body>
+</html>
