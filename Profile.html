@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Settings - InfoGuard</title>
+  <link rel="stylesheet" href="assets/css/profile.css">
+</head>
+<body>
+  <div class="sidebar" id="sidebar">
+    <button class="toggle-btn" id="toggleBtn">☰</button>
+    <div class="logo">
+      <div class="logo-icon"></div>
+      <span class="logo-text">InfoGuard</span>
+    </div>
+    <ul class="nav-menu">
+      <li class="nav-item"><a href="dashboard.html" class="nav-link"><span class="nav-icon">📊</span><span class="nav-text">Dashboard</span></a></li>
+      <li class="nav-item"><a href="upload.html" class="nav-link"><span class="nav-icon">📤</span><span class="nav-text">Upload Media</span></a></li>
+      <li class="nav-item"><a href="Access.html" class="nav-link"><span class="nav-icon">🔒</span><span class="nav-text">Access Control</span></a></li>
+      <li class="nav-item"><a href="#" class="nav-link"><span class="nav-icon">🔐</span><span class="nav-text">Biometric Access</span></a></li>
+      <li class="nav-item"><a href="profile.html" class="nav-link active"><span class="nav-icon">👤</span><span class="nav-text">Profile Settings</span></a></li>
+    </ul>
+    <div class="settings-link">
+      <a href="#" class="nav-link"><span class="nav-icon">⚙️</span><span class="nav-text">Settings</span></a>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="top-bar">
+      <button class="top-bar-btn">🔍</button>
+      <button class="top-bar-btn">🔔</button>
+      <button class="top-bar-btn profile-btn">K</button>
+    </div>
+
+    <div class="header">
+      <span id="welcomeText">Profile Settings</span>
+      <button class="theme-toggle" id="themeToggle">🌙</button>
+    </div>
+
+    <div class="profile-container">
+      <div class="card profile-card">
+        <div class="profile-header">
+          <div class="avatar-container">
+            <div class="avatar" id="avatar">K</div>
+            <button class="avatar-edit-btn" id="avatarEditBtn">✏️</button>
+            <input type="file" id="avatarUpload" accept="image/*" hidden>
+          </div>
+          <div class="profile-info">
+            <h2 class="profile-name">Kwame Johnson</h2>
+            <p class="profile-email">kwame@infoguard.com</p>
+            <p class="profile-role">Administrator</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><i>🔑</i> Account Settings</div>
+        <div class="settings-form">
+          <div class="form-group">
+            <label class="form-label">Full Name</label>
+            <input type="text" class="form-input" id="fullName" value="Kwame Johnson" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <input type="email" class="form-input" id="email" value="kwame@infoguard.com" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Job Title</label>
+            <input type="text" class="form-input" id="jobTitle" value="Security Administrator" />
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Phone Number</label>
+            <div class="phone-input-group">
+              <select class="form-select country-code" id="countryCode">
+                <option value="+233">Ghana (+233)</option>
+                <option value="+234">Nigeria (+234)</option>
+                <option value="+254">Kenya (+254)</option>
+                <option value="+27">South Africa (+27)</option>
+                <option value="+251">Ethiopia (+251)</option>
+                <option value="+20">Egypt (+20)</option>
+                <option value="+212">Morocco (+212)</option>
+                <option value="+225">Ivory Coast (+225)</option>
+                <option value="+216">Tunisia (+216)</option>
+                <option value="+260">Zambia (+260)</option>
+              </select>
+              <input type="tel" class="form-input phone-number" id="phone" placeholder="Phone number" value="123456789" />
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Timezone</label>
+            <select class="form-select" id="timezone">
+              <option value="Africa/Accra">Accra (GMT+0)</option>
+              <option value="Africa/Lagos">Lagos (GMT+1)</option>
+              <option value="Africa/Nairobi">Nairobi (GMT+3)</option>
+              <option value="Africa/Johannesburg">Johannesburg (GMT+2)</option>
+              <option value="Africa/Cairo">Cairo (GMT+2)</option>
+              <option value="Africa/Addis_Ababa">Addis Ababa (GMT+3)</option>
+              <option value="Africa/Casablanca">Casablanca (GMT+1)</option>
+              <option value="Africa/Abidjan">Abidjan (GMT+0)</option>
+              <option value="Africa/Tunis">Tunis (GMT+1)</option>
+              <option value="Africa/Lusaka">Lusaka (GMT+2)</option>
+            </select>
+          </div>
+          
+          <button class="btn btn-success" id="saveProfileBtn"><i>💾</i> Save Changes</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><i>🔒</i> Security Settings</div>
+        <div class="security-settings">
+          <div class="security-item">
+            <div>
+              <h3>Password</h3>
+              <p>Last changed 3 months ago</p>
+            </div>
+            <button class="btn btn-primary" id="changePasswordBtn">Change Password</button>
+          </div>
+          
+          <div class="security-item">
+            <div>
+              <h3>Two-Factor Authentication</h3>
+              <p>Add an extra layer of security</p>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="twoFactorToggle" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+          
+          <div class="security-item">
+            <div>
+              <h3>Login Activity</h3>
+              <p>View recent sign-ins</p>
+            </div>
+            <button class="btn btn-primary" id="viewActivityBtn">View Activity</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><i>🔔</i> Notification Preferences</div>
+        <div class="notification-settings">
+          <div class="notification-item">
+            <div>
+              <h3>Email Notifications</h3>
+              <p>Receive important updates via email</p>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="emailToggle" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+          
+          <div class="notification-item">
+            <div>
+              <h3>Security Alerts</h3>
+              <p>Immediate notifications for security events</p>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="securityToggle" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+          
+          <div class="notification-item">
+            <div>
+              <h3>System Updates</h3>
+              <p>Notifications about system maintenance</p>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="updatesToggle">
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/profile.js"></script>
+</body>
+</html>
