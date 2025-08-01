@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings - InfoGuard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/settings.css">
+</head>
+<body>
+  <button class="mobile-menu-btn" id="mobileMenuBtn">
+    <i class="fas fa-bars"></i>
+  </button>
+  
+  <div class="sidebar" id="sidebar">
+    <button class="toggle-btn" id="toggleBtn">✕</button>
+    <div class="logo">
+      <div class="logo-icon"></div>
+      <span class="logo-text">InfoGuard</span>
+    </div>
+    <ul class="nav-menu">
+      <li class="nav-item"><a href="dashboard.html" class="nav-link"><span class="nav-icon">📊</span><span class="nav-text">Dashboard</span></a></li>
+      <li class="nav-item"><a href="upload.html" class="nav-link"><span class="nav-icon">📤</span><span class="nav-text">Upload Media</span></a></li>
+      <li class="nav-item"><a href="Access.html" class="nav-link"><span class="nav-icon">🔒</span><span class="nav-text">Access Control</span></a></li>
+      <li class="nav-item"><a href="#" class="nav-link"><span class="nav-icon">🔐</span><span class="nav-text">Biometric Access</span></a></li>
+      <li class="nav-item"><a href="profile.html" class="nav-link"><span class="nav-icon">👤</span><span class="nav-text">Profile Settings</span></a></li>
+      <li class="nav-item"><a href="settings.html" class="nav-link active"><span class="nav-icon">⚙️</span><span class="nav-text">Settings</span></a></li>
+    </ul>
+  </div>
+
+  <div class="main-content">
+    <div class="top-bar">
+      <button class="top-bar-btn">🔍</button>
+      <button class="top-bar-btn">🔔</button>
+      <button class="top-bar-btn profile-btn">K</button>
+    </div>
+
+    <div class="header">
+      <span id="welcomeText">System Settings</span>
+      <button class="theme-toggle" id="themeToggle">🌙</button>
+    </div>
+
+    <div class="settings-container">
+      <div class="settings-tabs">
+        <button class="tab-btn active" data-tab="general">General</button>
+        <button class="tab-btn" data-tab="security">Security</button>
+        <button class="tab-btn" data-tab="notifications">Notifications</button>
+        <button class="tab-btn" data-tab="preferences">Preferences</button>
+        <button class="tab-btn" data-tab="account">Account</button>
+      </div>
+
+      <div class="tab-content active" id="general">
+        <div class="card">
+          <div class="card-title"><i>🌐</i> General Settings</div>
+          <div class="settings-form">
+            <div class="form-group">
+              <label class="form-label">Application Theme</label>
+              <div class="theme-options">
+                <div class="theme-option" data-theme="light">
+                  <div class="theme-preview light"></div>
+                  <span>Light Mode</span>
+                </div>
+                <div class="theme-option" data-theme="dark">
+                  <div class="theme-preview dark"></div>
+                  <span>Dark Mode</span>
+                </div>
+                <div class="theme-option" data-theme="auto">
+                  <div class="theme-preview auto"></div>
+                  <span>Auto (System)</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label">Language</label>
+              <select class="form-select" id="language">
+                <option value="en">English</option>
+                <option value="fr">French</option>
+                <option value="es">Spanish</option>
+                <option value="pt">Portuguese</option>
+                <option value="ar">Arabic</option>
+                <option value="sw">Swahili</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label">Default Home Page</label>
+              <select class="form-select" id="homePage">
+                <option value="dashboard">Dashboard</option>
+                <option value="upload">Upload Media</option>
+                <option value="access">Access Control</option>
+                <option value="profile">Profile Settings</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label">Timezone</label>
+              <select class="form-select" id="timezone">
+                <option value="Africa/Accra">Accra (GMT+0)</option>
+                <option value="Africa/Lagos">Lagos (GMT+1)</option>
+                <option value="Africa/Nairobi">Nairobi (GMT+3)</option>
+                <option value="Africa/Johannesburg">Johannesburg (GMT+2)</option>
+                <option value="Africa/Cairo">Cairo (GMT+2)</option>
+                <option value="Africa/Addis_Ababa">Addis Ababa (GMT+3)</option>
+                <option value="Africa/Casablanca">Casablanca (GMT+1)</option>
+                <option value="Africa/Abidjan">Abidjan (GMT+0)</option>
+                <option value="Africa/Tunis">Tunis (GMT+1)</option>
+                <option value="Africa/Lusaka">Lusaka (GMT+2)</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <button class="btn btn-primary" id="saveGeneral">
+                <i class="fas fa-save"></i> Save Settings
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-content" id="security">
+        <div class="card">
+          <div class="card-title"><i>🔐</i> Security Settings</div>
+          <div class="settings-form">
+            <div class="security-item">
+              <div>
+                <h3>Two-Factor Authentication</h3>
+                <p>Add an extra layer of security to your account</p>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" id="twoFactorToggle" checked>
+                <span class="slider"></span>
+              </label>
+            </div>
+            
+            <div class="security-item">
+              <div>
+                <h3>Password Requirements</h3>
+                <p>Set minimum password strength</p>
+              </div>
+              <select class="form-select" id="passwordStrength">
+                <option value="low">Low (6 characters)</option>
+                <option value="medium">Medium (8 characters, mixed case)</option>
+                <option value="high">High (10 characters, mixed case + numbers)</option>
+                <option value="very-high">Very High (12 characters, mixed case + numbers + symbols)</option>
+              </select>
+            </div>
+            
+            <div class="security-item">
+              <div>
+                <h3>Session Timeout</h3>
+                <p>Automatic logout after inactivity</p>
+              </div>
+              <select class="form-select" id="sessionTimeout">
+                <option value="15">15 minutes</option>
+                <option value="30">30 minutes</option>
+                <option value="60">1 hour</option>
+                <option value="120">2 hours</option>
+                <option value="0">Never</option>
+              </select>
+            </div>
+            
+            <div class="security-item">
+              <div>
+                <h3>Login History</h3>
+                <p>View all recent login activity</p>
+              </div>
+              <button class="btn btn-primary">View Logs</button>
+            </div>
+            
+            <div class="form-group">
+              <button class="btn btn-primary" id="saveSecurity">
+                <i class="fas fa-save"></i> Save Settings
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-content" id="notifications">
+        <div class="card">
+          <div class="card-title"><i>🔔</i> Notification Settings</div>
+          <div class="settings-form">
+            <div class="notification-item">
+              <div>
+                <h3>Email Notifications</h3>
+                <p>Receive important updates via email</p>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" id="emailToggle" checked>
+                <span class="slider"></span>
+              </label>
+            </div>
+            
+            <div class="notification-item">
+              <div>
+                <h3>Security Alerts</h3>
+                <p>Immediate notifications for security events</p>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" id="securityToggle" checked>
+                <span class="slider"></span>
+              </label>
+            </div>
+            
+            <div class="notification-item">
+              <div>
+                <h3>System Updates</h3>
+                <p>Notifications about system maintenance</p>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" id="updatesToggle">
+                <span class="slider"></span>
+              </label>
+            </div>
+            
+            <div class="notification-item">
+              <div>
+                <h3>Push Notifications</h3>
+                <p>Receive notifications on your devices</p>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" id="pushToggle">
+                <span class="slider"></span>
+              </label>
+            </div>
+            
+            <div class="form-group">
+              <button class="btn btn-primary" id="saveNotifications">
+                <i class="fas fa-save"></i> Save Settings
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-content" id="preferences">
+        <div class="card">
+          <div class="card-title"><i>🎨</i> Display Preferences</div>
+          <div class="settings-form">
+            <div class="form-group">
+              <label class="form-label">Font Size</label>
+              <div class="range-slider">
+                <input type="range" min="12" max="18" value="14" id="fontSize">
+                <span id="fontSizeValue">14px</span>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label">Density</label>
+              <div class="density-options">
+                <div class="density-option active" data-density="comfortable">
+                  <div class="density-preview comfortable"></div>
+                  <span>Comfortable</span>
+                </div>
+                <div class="density-option" data-density="compact">
+                  <div class="density-preview compact"></div>
+                  <span>Compact</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label">Animation Level</label>
+              <div class="animation-options">
+                <label class="radio-option">
+                  <input type="radio" name="animation" value="full" checked>
+                  <span>Full animations</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="animation" value="reduced">
+                  <span>Reduced animations</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="animation" value="none">
+                  <span>No animations</span>
+                </label>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <button class="btn btn-primary" id="savePreferences">
+                <i class="fas fa-save"></i> Save Settings
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-content" id="account">
+        <div class="card">
+          <div class="card-title"><i>👤</i> Account Management</div>
+          <div class="settings-form">
+            <div class="account-option">
+              <div>
+                <h3>Export Account Data</h3>
+                <p>Download a copy of your personal data</p>
+              </div>
+              <button class="btn btn-primary">Export Data</button>
+            </div>
+            
+            <div class="account-option">
+              <div>
+                <h3>Change Password</h3>
+                <p>Update your account password</p>
+              </div>
+              <button class="btn btn-primary">Change Password</button>
+            </div>
+            
+            <div class="account-option">
+              <div>
+                <h3>Deactivate Account</h3>
+                <p>Temporarily disable your account</p>
+              </div>
+              <button class="btn btn-warning" id="deactivateAccount">Deactivate</button>
+            </div>
+            
+            <div class="account-option danger">
+              <div>
+                <h3>Delete Account</h3>
+                <p>Permanently delete your account and all data</p>
+              </div>
+              <button class="btn btn-danger" id="deleteAccount">Delete Account</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="save-notification" id="saveNotification">
+    <i class="fas fa-check-circle"></i>
+    <span>Settings saved successfully!</span>
+  </div>
+
+  <script src="assets/js/settings.js"></script>
+</body>
+</html>
